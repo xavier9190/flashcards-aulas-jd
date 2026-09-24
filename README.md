@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Flashcards — Estágio
 
-## Getting Started
+Aplicação minimalista de flashcards organizada por temas e aulas. Dark mode único, mobile-first, sem banco de dados — conteúdo em arquivos JSON estáticos.
 
-First, run the development server:
+## Stack
+
+- **Next.js 16** (App Router) + **TypeScript** `strict: true`
+- **Tailwind CSS v4** (configuração em `app/globals.css` via `@theme`)
+- **Dados:** arquivos JSON em `/data`, lidos via `fs` em Server Components
+- **Deploy:** Vercel · **CI/CD:** GitHub Actions
+
+---
+
+## Rodar localmente
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# → http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Estrutura do projeto
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/
+  layout.tsx       # Root layout (viewport meta, lang, safe-area)
+  page.tsx         # Server component — carrega temas via lib/flashcards.ts
+  StudyShell.tsx   # Client shell — gerencia estado de tema/aula/card
+  globals.css      # Tailwind v4 @theme tokens + animação de flip
 
-## Learn More
+components/
+  Header.tsx           # Barra fixa com título e botão hambúrguer (44×44px)
+  ProgressCounter.tsx  # Contador "x / y"
+  FlashCard.tsx        # Card com flip 3D (dvh height, touch-first)
+  ExplanationBlock.tsx # Bloco de explicação (truncado em 180 chars)
+  SideMenu.tsx         # Overlay fullscreen com lista de aulas + swipe-down
 
-To learn more about Next.js, take a look at the following resources:
+lib/
+  flashcards.ts    # Lê todos os .json em /data → Theme[]
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+types/
+  index.ts         # Flashcard · Lesson · Theme
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+data/
+  example.json     # Tema de exemplo (Fundamentos Web)
 
-## Deploy on Vercel
+.github/
+  workflows/
+    deploy.yml     # Lint → Build → Deploy no Vercel
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Adicionar um novo tema/aula
+
+1. Crie um arquivo em `data/seu-tema.json` seguindo o schema:
+
+```json
+{
+  "id": "id-unico-do-tema",
+  "title": "Título do Tema",
+  "lessons": [
+    {
+      "id": "id-unico-da-aula",
+      "title": "Título da Aula",
+      "flashcards": [
+        {
+          "id": "card-1",
+          "question": "Pergunta do card",
+          "answer": "Resposta do card",
+          "explanation": "Explicação breve (máx. ~180 chars para não ser truncada)"
+        }
+      ]
+    }
+  ]
+}
+```
+
+2. Salve o arquivo — nenhuma outra alteração necessária. O app lê todos os `.json` em `/data` automaticamente.
+
+> **IDs:** devem ser únicos globalmente entre todos os arquivos JSON. Use slugs descritivos (`html-semantico`, `css-box-model`).
+
+---
+
+## Deploy no Vercel
+
+### Primeira vez (via Vercel CLI)
+
+```bash
+npx vercel
+# Responda as perguntas e anote o Project ID e Org ID exibidos
+```
+
+### Secrets necessários no GitHub
+
+Vá em **Settings → Secrets and variables → Actions** e adicione:
+
+| Secret | Como obter |
+|---|---|
+| `VERCEL_TOKEN` | [vercel.com/account/tokens](https://vercel.com/account/tokens) |
+| `VERCEL_ORG_ID` | `.vercel/project.json` após `npx vercel` (campo `orgId`) |
+| `VERCEL_PROJECT_ID` | `.vercel/project.json` após `npx vercel` (campo `projectId`) |
+
+Após configurar, cada push na `main` executa lint → build → deploy automaticamente.
+
+---
+
+## Lint & Formatação
+
+```bash
+npm run lint      # ESLint (Next.js config)
+npm run format    # Prettier (sobrescreve in-place)
+```

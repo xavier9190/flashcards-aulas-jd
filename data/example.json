@@ -1,0 +1,84 @@
+{
+  "id": "web-fundamentals",
+  "title": "Fundamentos Web",
+  "lessons": [
+    {
+      "id": "html-semantico",
+      "title": "HTML Semântico",
+      "flashcards": [
+        {
+          "id": "html-1",
+          "question": "O que é HTML semântico?",
+          "answer": "Uso de elementos HTML que descrevem o significado do conteúdo, não só sua aparência.",
+          "explanation": "Elementos como <header>, <main>, <article> e <nav> comunicam estrutura para navegadores, leitores de tela e motores de busca."
+        },
+        {
+          "id": "html-2",
+          "question": "Qual a diferença entre <div> e <section>?",
+          "answer": "<section> agrupa conteúdo relacionado com um tema em comum; <div> é um contêiner genérico sem significado semântico.",
+          "explanation": "Use <section> quando o bloco faria sentido no esboço do documento. Use <div> apenas para fins de estilo ou layout."
+        },
+        {
+          "id": "html-3",
+          "question": "Por que usar <button> em vez de <div> para botões?",
+          "answer": "<button> é focável via teclado, dispara eventos de clique com Enter/Space e é anunciado por leitores de tela.",
+          "explanation": "Usar <div> como botão exige reimplementar foco, ARIA e eventos manualmente — trabalho que <button> entrega de graça."
+        },
+        {
+          "id": "html-4",
+          "question": "O que é o atributo alt em imagens?",
+          "answer": "Texto alternativo que descreve o conteúdo da imagem para leitores de tela e quando a imagem não carrega.",
+          "explanation": "alt=\"\" (vazio) sinaliza que a imagem é decorativa. Alt descritivo é obrigatório para imagens de conteúdo — critério de acessibilidade WCAG 1.1.1."
+        }
+      ]
+    },
+    {
+      "id": "css-box-model",
+      "title": "Box Model & Layout",
+      "flashcards": [
+        {
+          "id": "css-1",
+          "question": "O que compõe o box model do CSS?",
+          "answer": "Content → Padding → Border → Margin, de dentro para fora.",
+          "explanation": "Com box-sizing: border-box (padrão no Tailwind), width/height incluem padding e border, facilitando cálculos de layout."
+        },
+        {
+          "id": "css-2",
+          "question": "Quando usar Flexbox vs Grid?",
+          "answer": "Flexbox para layouts de uma dimensão (linha ou coluna). Grid para layouts de duas dimensões simultaneamente.",
+          "explanation": "Regra prática: se você precisa alinhar itens em linha E coluna ao mesmo tempo, use Grid. Caso contrário, Flexbox é mais simples."
+        },
+        {
+          "id": "css-3",
+          "question": "O que é position: sticky?",
+          "answer": "O elemento se comporta como relative até atingir o scroll-offset definido, depois age como fixed dentro do contêiner pai.",
+          "explanation": "Útil para headers de tabela ou navbars que devem grudár durante o scroll mas parar no final do contêiner pai."
+        }
+      ]
+    },
+    {
+      "id": "js-fundamentos",
+      "title": "JavaScript Essencial",
+      "flashcards": [
+        {
+          "id": "js-1",
+          "question": "Qual a diferença entre var, let e const?",
+          "answer": "var tem escopo de função e hoisting. let e const têm escopo de bloco. const não permite reatribuição.",
+          "explanation": "Prefira const por padrão, let quando precisar reatribuir. Evite var — comportamento de hoisting é fonte comum de bugs."
+        },
+        {
+          "id": "js-2",
+          "question": "O que é uma Promise?",
+          "answer": "Objeto que representa o resultado eventual (ou falha) de uma operação assíncrona.",
+          "explanation": "Estados: pending → fulfilled ou rejected. Use async/await para consumir Promises com sintaxe síncrona e blocos try/catch para erros."
+        },
+        {
+          "id": "js-3",
+          "question": "O que faz o operador spread (...)?",
+          "answer": "Expande um iterável (array, objeto) nos seus elementos individuais no local em que aparece.",
+          "explanation": "Exemplos: [...arr1, ...arr2] concatena arrays; {...obj, key: val} cria cópia com propriedades sobrescritas — padrão central no React."
+        }
+      ]
+    }
+  ]
+}
