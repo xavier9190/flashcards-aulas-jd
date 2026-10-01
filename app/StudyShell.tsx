@@ -48,7 +48,8 @@ export default function StudyShell({ themes }: Props) {
   return (
     <div className="relative flex h-dvh flex-col overflow-hidden bg-background text-text-primary">
       <Header
-        title={activeLesson?.title ?? ''}
+        themeTitle={activeLesson?.title ?? ''}
+        slidesUrl={activeLesson?.slidesUrl}
         onMenuOpen={() => setMenuOpen(true)}
       />
 

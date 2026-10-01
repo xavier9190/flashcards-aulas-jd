@@ -8,6 +8,7 @@ export type Flashcard = {
 export type Lesson = {
   id: string
   title: string
+  slidesUrl?: string
   flashcards: Flashcard[]
 }
 
