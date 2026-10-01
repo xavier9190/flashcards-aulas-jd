@@ -55,11 +55,15 @@ data/
 
 ## Adicionar um novo tema/aula
 
-1. Crie um arquivo em `data/seu-tema.json` seguindo o schema:
+### Um JSON por aula
+
+Cada arquivo `.json` em `/data` representa **uma aula** de um tema. O loader une
+automaticamente todos os arquivos que compartilham o mesmo `theme.id` em um único
+tema com várias aulas.
 
 ```json
 {
-  "id": "id-unico-do-tema",
+  "id": "id-do-tema",
   "title": "Título do Tema",
   "lessons": [
     {
@@ -78,9 +82,25 @@ data/
 }
 ```
 
-2. Salve o arquivo — nenhuma outra alteração necessária. O app lê todos os `.json` em `/data` automaticamente.
+### Ordem das aulas
 
-> **IDs:** devem ser únicos globalmente entre todos os arquivos JSON. Use slugs descritivos (`html-semantico`, `css-box-model`).
+A ordem das aulas dentro de um tema segue a **ordem alfabética do nome do arquivo**.
+Use prefixos numéricos para controlar a sequência:
+
+```
+data/logica-01-algoritmos.json   → Aula 1
+data/logica-02-variaveis.json    → Aula 2
+data/logica-03-condicionais.json → Aula 3
+data/logica-04-loops.json        → Aula 4
+```
+
+### IDs únicos globalmente
+
+Os IDs de aula (`lesson.id`) e de card (`flashcard.id`) **devem ser únicos entre
+todos os arquivos JSON**. O loader valida isso no momento do build e lança um erro
+descritivo se encontrar duplicatas — impedindo o deploy de conteúdo inválido.
+
+Use slugs descritivos e prefixados com o tema: `logica-aula-1-algoritmos`, `alg-1`.
 
 ---
 

@@ -1,0 +1,66 @@
+{
+  "id": "logica-de-programacao",
+  "title": "L\u00f3gica de Programa\u00e7\u00e3o",
+  "lessons": [
+    {
+      "id": "logica-aula-1-algoritmos",
+      "title": "Aula 1 \u00b7 A Arte de Dar Instru\u00e7\u00f5es",
+      "flashcards": [
+        {
+          "id": "alg-1",
+          "question": "O que \u00e9 programar?",
+          "answer": "Conversar com o computador para ele realizar uma tarefa.",
+          "explanation": "Voc\u00ea d\u00e1 as ordens e ele obedece. O computador n\u00e3o pensa sozinho: s\u00f3 faz o que for mandado."
+        },
+        {
+          "id": "alg-2",
+          "question": "O computador \u00e9 inteligente?",
+          "answer": "N\u00e3o! Ele \u00e9 muito r\u00e1pido e muito obediente, mas n\u00e3o sabe nada sozinho.",
+          "explanation": "Imagine um alien\u00edgena rec\u00e9m-chegado \u00e0 Terra: ele s\u00f3 entende o que voc\u00ea explicar, passo a passo."
+        },
+        {
+          "id": "alg-3",
+          "question": "Por que mandar o computador \u201cFa\u00e7a um sandu\u00edche\u201d n\u00e3o funciona?",
+          "answer": "Porque ele n\u00e3o sabe o que \u00e9 p\u00e3o, recheio ou como abrir o pote. Cada pequeno passo precisa ser explicado.",
+          "explanation": "Programar \u00e9 detalhar cada passo da tarefa, na ordem certa."
+        },
+        {
+          "id": "alg-4",
+          "question": "O que \u00e9 um algoritmo?",
+          "answer": "Uma lista de instru\u00e7\u00f5es claras e detalhadas, como uma receita de bolo.",
+          "explanation": "Todo algoritmo tem um objetivo: resolver um problema ou realizar uma tarefa."
+        },
+        {
+          "id": "alg-5",
+          "question": "Por que a ordem dos passos importa?",
+          "answer": "Porque mudar a ordem muda o resultado.",
+          "explanation": "Vestir a roupa antes de tomar banho? D\u00e1 confus\u00e3o! No algoritmo \u00e9 igual: a sequ\u00eancia muda tudo."
+        },
+        {
+          "id": "alg-6",
+          "question": "Como \u00e9 o algoritmo de atravessar a rua?",
+          "answer": "1. Pare na cal\u00e7ada. 2. Olhe para a esquerda. 3. Olhe para a direita. 4. Se n\u00e3o vier carro, atravesse.",
+          "explanation": "Executamos algoritmos o tempo todo, sem perceber!"
+        },
+        {
+          "id": "alg-7",
+          "question": "Qual \u00e9 o algoritmo da rotina matinal?",
+          "answer": "Acordar, escovar os dentes, tomar banho e vestir a roupa.",
+          "explanation": "Inverter essa sequ\u00eancia l\u00f3gica causaria um grande problema!"
+        },
+        {
+          "id": "alg-8",
+          "question": "O que \u00e9 um bug?",
+          "answer": "Um erro no passo a passo do algoritmo.",
+          "explanation": "Exemplo: mandar colocar o ovo na frigideira, mas esquecer de mandar acender o fogo antes."
+        },
+        {
+          "id": "alg-9",
+          "question": "Quais s\u00e3o os 4 passos do visitante no nosso Mapa Interativo?",
+          "answer": "1. Acessar (QR Code). 2. Preencher o formul\u00e1rio. 3. Enviar. 4. Visualizar o ponto no mapa.",
+          "explanation": "Esse \u00e9 o algoritmo do visitante no dia do evento."
+        }
+      ]
+    }
+  ]
+}
