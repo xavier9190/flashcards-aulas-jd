@@ -93,7 +93,7 @@ export default function SideMenu({
                         onClick={() => onSelectLesson(theme.id, lesson)}
                         className={`flex min-h-[56px] w-full items-center rounded px-3 text-left text-sm transition-colors ${
                           isActive
-                            ? 'border border-accent text-text-primary'
+                            ? 'border border-white text-text-primary'
                             : 'text-text-secondary'
                         }`}
                       >

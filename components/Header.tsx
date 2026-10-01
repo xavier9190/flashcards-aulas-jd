@@ -1,12 +1,12 @@
 type Props = {
-  themeTitle: string
+  title: string
   onMenuOpen: () => void
 }
 
-export default function Header({ themeTitle, onMenuOpen }: Props) {
+export default function Header({ title, onMenuOpen }: Props) {
   return (
     <header className="flex h-14 w-full items-center justify-between border-b border-surface px-4">
-      <span className="text-sm font-medium text-text-primary">{themeTitle}</span>
+      <span className="text-sm font-medium text-text-primary">{title}</span>
       <button
         onClick={onMenuOpen}
         aria-label="Abrir menu de aulas"
