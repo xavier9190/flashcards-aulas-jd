@@ -25,13 +25,16 @@ npm run dev
 
 ```
 app/
-  layout.tsx       # Root layout (viewport meta, lang, safe-area)
-  page.tsx         # Server component — carrega temas via lib/flashcards.ts
-  StudyShell.tsx   # Client shell — gerencia estado de tema/aula/card
-  globals.css      # Tailwind v4 @theme tokens + animação de flip
+  layout.tsx              # Root layout (viewport meta, lang, safe-area)
+  page.tsx                # / → lista de temas e aulas (Server Component)
+  aula/[lessonId]/
+    page.tsx              # /aula/:id → tela de estudo (Server Component)
+  StudyShell.tsx          # Client shell — gerencia cardIndex e menu lateral
+  globals.css             # Tailwind v4 @theme tokens + animação de flip
 
 components/
-  Header.tsx           # Barra fixa com título da aula atual e botão hambúrguer (44×44px)
+  Header.tsx           # Barra fixa: chevron voltar · título · slides · hambúrguer
+  SlidesIcon.tsx       # Ícone SVG de apresentação (compartilhado)
   ProgressCounter.tsx  # Contador "x / y"
   FlashCard.tsx        # Card com flip 3D (dvh height, touch-first)
   ExplanationBlock.tsx # Bloco de explicação (truncado em 180 chars)
@@ -41,7 +44,7 @@ lib/
   flashcards.ts    # Lê todos os .json em /data, une arquivos com mesmo id → Theme[], valida IDs únicos
 
 types/
-  index.ts         # Flashcard · Lesson · Theme
+  index.ts         # Flashcard · Lesson (slidesUrl?) · Theme
 
 data/
   example.json.bak             # Tema de exemplo desativado (renomeie para .json para reativar)
@@ -84,7 +87,10 @@ tema com várias aulas.
 }
 ```
 
-> **`slidesUrl`** (opcional) — link da pasta ou arquivo de slides da aula (Google Drive ou qualquer URL). Quando presente, um botão com ícone de apresentação aparece no Header e abre o link em nova aba. Quando ausente, o botão não é renderizado.
+> **`slidesUrl`** (opcional) — link dos slides da aula (Google Drive ou qualquer URL).
+> - Na **tela inicial** (`/`): aparece como quadrado clicável à direita do botão da aula. Aulas sem `slidesUrl` exibem um espaçador invisível para manter o alinhamento.
+> - Na **tela de estudo** (`/aula/[lessonId]`): aparece como ícone no Header, ao lado do hambúrguer.
+> - Em ambos os casos, abre o link em nova aba. Sem o campo, nenhum botão é renderizado.
 
 ### Ordem das aulas
 

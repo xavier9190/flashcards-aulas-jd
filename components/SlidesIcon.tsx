@@ -1,0 +1,39 @@
+export default function SlidesIcon() {
+  return (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="none"
+      aria-hidden="true"
+    >
+      <rect
+        x="2"
+        y="3"
+        width="16"
+        height="11"
+        rx="1.5"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      />
+      <line
+        x1="10"
+        y1="14"
+        x2="10"
+        y2="17"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+      <line
+        x1="6"
+        y1="17"
+        x2="14"
+        y2="17"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+    </svg>
+  )
+}

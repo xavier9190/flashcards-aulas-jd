@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useCallback } from 'react'
+import { useRouter } from 'next/navigation'
 import type { Theme, Lesson } from '@/types'
 import Header from '@/components/Header'
 import ProgressCounter from '@/components/ProgressCounter'
@@ -10,30 +11,30 @@ import SideMenu from '@/components/SideMenu'
 
 type Props = {
   themes: Theme[]
+  themeId: string
+  lessonId: string
 }
 
-export default function StudyShell({ themes }: Props) {
-  const [activeThemeId, setActiveThemeId] = useState(themes[0]?.id ?? '')
-  const [activeLessonId, setActiveLessonId] = useState(
-    themes[0]?.lessons[0]?.id ?? '',
-  )
+export default function StudyShell({ themes, themeId, lessonId }: Props) {
+  const router = useRouter()
   const [cardIndex, setCardIndex] = useState(0)
   const [menuOpen, setMenuOpen] = useState(false)
 
-  const activeTheme = themes.find((t) => t.id === activeThemeId) ?? themes[0]
+  const activeTheme = themes.find((t) => t.id === themeId) ?? themes[0]
   const activeLesson =
-    activeTheme?.lessons.find((l) => l.id === activeLessonId) ??
+    activeTheme?.lessons.find((l) => l.id === lessonId) ??
     activeTheme?.lessons[0]
 
   const flashcards = activeLesson?.flashcards ?? []
   const currentCard = flashcards[cardIndex]
 
-  const selectLesson = useCallback((themeId: string, lesson: Lesson) => {
-    setActiveThemeId(themeId)
-    setActiveLessonId(lesson.id)
-    setCardIndex(0)
-    setMenuOpen(false)
-  }, [])
+  const selectLesson = useCallback(
+    (_themeId: string, lesson: Lesson) => {
+      router.push(`/aula/${lesson.id}`)
+      setMenuOpen(false)
+    },
+    [router],
+  )
 
   const goNext = useCallback(() => {
     setCardIndex((i) => Math.min(i + 1, flashcards.length - 1))
@@ -50,6 +51,7 @@ export default function StudyShell({ themes }: Props) {
       <Header
         themeTitle={activeLesson?.title ?? ''}
         slidesUrl={activeLesson?.slidesUrl}
+        backHref="/"
         onMenuOpen={() => setMenuOpen(true)}
       />
 
@@ -101,7 +103,7 @@ export default function StudyShell({ themes }: Props) {
         open={menuOpen}
         onClose={() => setMenuOpen(false)}
         onSelectLesson={selectLesson}
-        activeLessonId={activeLessonId}
+        activeLessonId={lessonId}
       />
     </div>
   )
