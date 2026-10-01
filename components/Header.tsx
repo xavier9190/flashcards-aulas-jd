@@ -1,13 +1,39 @@
+import Link from 'next/link'
+import SlidesIcon from './SlidesIcon'
+
 type Props = {
   themeTitle: string
   slidesUrl?: string
+  backHref?: string
   onMenuOpen: () => void
 }
 
-export default function Header({ themeTitle, slidesUrl, onMenuOpen }: Props) {
+export default function Header({
+  themeTitle,
+  slidesUrl,
+  backHref,
+  onMenuOpen,
+}: Props) {
   return (
     <header className="flex h-14 w-full items-center justify-between border-b border-surface px-4">
-      <span className="text-sm font-medium text-text-primary">{themeTitle}</span>
+      <div className="flex items-center gap-2">
+        {backHref && (
+          <Link
+            href={backHref}
+            aria-label="Voltar para a lista de aulas"
+            className="flex min-h-[44px] min-w-[44px] items-center justify-center text-text-secondary"
+          >
+            <HomeIcon />
+          </Link>
+        )}
+        {backHref && (
+          <span className="h-4 w-px bg-white/25" aria-hidden="true" />
+        )}
+        <span className="text-sm font-medium text-text-primary">
+          {themeTitle}
+        </span>
+      </div>
+
       <div className="flex items-center">
         {slidesUrl && (
           <a
@@ -33,7 +59,7 @@ export default function Header({ themeTitle, slidesUrl, onMenuOpen }: Props) {
   )
 }
 
-function SlidesIcon() {
+function HomeIcon() {
   return (
     <svg
       width="20"
@@ -42,9 +68,19 @@ function SlidesIcon() {
       fill="none"
       aria-hidden="true"
     >
-      <rect x="2" y="3" width="16" height="11" rx="1.5" stroke="currentColor" strokeWidth="1.5" />
-      <line x1="10" y1="14" x2="10" y2="17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      <line x1="6" y1="17" x2="14" y2="17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <path
+        d="M3 9.5L10 3l7 6.5V17a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M7.5 18v-5h5v5"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   )
 }
