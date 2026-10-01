@@ -1,0 +1,66 @@
+{
+  "id": "logica-de-programacao",
+  "title": "Lógica de Programação",
+  "lessons": [
+    {
+      "id": "logica-aula-4-loops",
+      "title": "Aula 4 · A Máquina de Repetir",
+      "flashcards": [
+        {
+          "id": "loop-1",
+          "question": "O que é um loop (laço de repetição)?",
+          "answer": "Uma instrução que o computador repete várias vezes.",
+          "explanation": "Ensinamos a regra só uma vez e ele repete sem reclamar."
+        },
+        {
+          "id": "loop-2",
+          "question": "Por que precisamos de loops?",
+          "answer": "Escrever 100 frases cansa qualquer pessoa. O computador não sente cansaço ao repetir.",
+          "explanation": "Ele repete a instrução 1000 vezes, instantaneamente. Isso torna a automação possível."
+        },
+        {
+          "id": "loop-3",
+          "question": "Quais palavras usamos para criar um laço?",
+          "answer": "ENQUANTO e PARA.",
+          "explanation": "São as estruturas de repetição do computador."
+        },
+        {
+          "id": "loop-4",
+          "question": "Quais são as 3 partes de um laço?",
+          "answer": "A Ação, a Verificação e o Fim.",
+          "explanation": "Ação: o que repetir. Verificação: testar se já deve parar. Fim: o limite foi atingido e o laço acaba."
+        },
+        {
+          "id": "loop-5",
+          "question": "O que é a condição de parada?",
+          "answer": "A regra que diz quando o laço deve terminar.",
+          "explanation": "É essencial para finalizar qualquer processo repetitivo."
+        },
+        {
+          "id": "loop-6",
+          "question": "O que é um loop infinito?",
+          "answer": "Um laço que nunca termina, porque não tem limite claro para parar.",
+          "explanation": "Sem condição de parada, o sistema trava e nunca termina."
+        },
+        {
+          "id": "loop-7",
+          "question": "Por que o computador cai num loop infinito?",
+          "answer": "Porque ele obedece cegamente: nunca questiona ordens, por mais absurdas que sejam.",
+          "explanation": "A lição: sempre defina com clareza quando o laço deve parar."
+        },
+        {
+          "id": "loop-8",
+          "question": "Como o painel do Mapa Interativo conta 500 formulários?",
+          "answer": "Com um laço: analisa cada formulário, um de cada vez, e soma um ponto no gráfico.",
+          "explanation": "O laço termina quando todos os registros foram processados, sem pular nenhum."
+        },
+        {
+          "id": "loop-9",
+          "question": "Na Linha de Montagem de Dados, qual é a regra do laço?",
+          "answer": "Ler, carimbar e passar cada cartão adiante, até a pilha acabar.",
+          "explanation": "Rapidez sem pular nenhuma etapa. É um laço de repetição feito em grupo!"
+        }
+      ]
+    }
+  ]
+}

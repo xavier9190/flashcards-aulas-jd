@@ -1,0 +1,78 @@
+{
+  "id": "logica-de-programacao",
+  "title": "Lógica de Programação",
+  "lessons": [
+    {
+      "id": "logica-aula-3-condicionais",
+      "title": "Aula 3 · Encruzilhadas",
+      "flashcards": [
+        {
+          "id": "cond-1",
+          "question": "O que é uma condicional?",
+          "answer": "Um jeito de o computador tomar decisões sozinho: SE isso, faz aquilo; SENÃO, faz outra coisa.",
+          "explanation": "Em programação, é o famoso SE e SENÃO (IF / ELSE)."
+        },
+        {
+          "id": "cond-2",
+          "question": "Como funciona a decisão do clima?",
+          "answer": "SE estiver chovendo, levo o guarda-chuva. SENÃO, levo óculos de sol.",
+          "explanation": "A vida é cheia de decisões, e o computador precisa aprender a fazer as mesmas escolhas."
+        },
+        {
+          "id": "cond-3",
+          "question": "Como funciona a decisão da idade?",
+          "answer": "SE a idade for maior que 18, pode dirigir. SENÃO, não pode.",
+          "explanation": "A pergunta tem só duas respostas possíveis: SIM ou NÃO."
+        },
+        {
+          "id": "cond-4",
+          "question": "Como funciona a decisão da senha?",
+          "answer": "SE a senha estiver correta, o celular desbloqueia. SENÃO, dá erro.",
+          "explanation": "O computador compara o que foi digitado com a senha certa."
+        },
+        {
+          "id": "cond-5",
+          "question": "Que tipo de pergunta o computador faz no SE?",
+          "answer": "Uma pergunta que só pode ser respondida com SIM ou NÃO.",
+          "explanation": "Exemplo: a senha digitada é igual a 123? Verdadeiro ou Falso decide o caminho."
+        },
+        {
+          "id": "cond-6",
+          "question": "O que acontece no caminho do SIM (SE)?",
+          "answer": "O programa executa a ação para a resposta Verdadeira.",
+          "explanation": "Exemplo: desbloquear a tela do celular."
+        },
+        {
+          "id": "cond-7",
+          "question": "O que acontece no caminho do NÃO (SENÃO)?",
+          "answer": "O programa executa o plano B, quando a resposta é Falsa.",
+          "explanation": "Exemplo: mostrar uma mensagem de erro."
+        },
+        {
+          "id": "cond-8",
+          "question": "Quais símbolos usamos para comparar valores?",
+          "answer": "= igual, ≠ diferente, > maior, < menor, ≥ maior ou igual, ≤ menor ou igual.",
+          "explanation": "A resposta da comparação é sempre SIM ou NÃO, e ela decide o caminho."
+        },
+        {
+          "id": "cond-9",
+          "question": "Para que servem os operadores lógicos E, OU e NÃO?",
+          "answer": "Para combinar duas ou mais condições em uma única decisão.",
+          "explanation": "Eles também respondem SIM ou NÃO, e essa resposta escolhe o caminho."
+        },
+        {
+          "id": "cond-10",
+          "question": "No Mapa Interativo, o que acontece se a ocorrência for Grave?",
+          "answer": "O sistema pinta o ponto no mapa de vermelho.",
+          "explanation": "SENÃO, se for algo leve, o ponto fica amarelo. Exemplo de grave: um cano estourado."
+        },
+        {
+          "id": "cond-11",
+          "question": "Jogo do Se e Senão: SE você está de camisa preta, levante a mão. SENÃO, bata palmas. Você está de azul. O que faz?",
+          "answer": "Bate palmas!",
+          "explanation": "Azul não é preta, então vale o SENÃO. Quem errar o caminho lógico sofre um Bug e sai da rodada."
+        }
+      ]
+    }
+  ]
+}
