@@ -22,7 +22,7 @@ export default async function Home() {
                 <li key={lesson.id} className="flex items-center gap-3">
                   <Link
                     href={`/aula/${lesson.id}`}
-                    className="flex min-h-[56px] flex-1 flex-col justify-center rounded border border-surface px-4 transition-colors active:border-accent"
+                    className="flex min-h-[56px] flex-1 flex-col justify-center rounded border border-surface px-4 transition-colors active:border-white/50"
                   >
                     <span className="text-sm text-text-primary">
                       {lesson.title}

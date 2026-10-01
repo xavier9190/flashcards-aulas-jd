@@ -16,15 +16,18 @@ export default function Header({
 }: Props) {
   return (
     <header className="flex h-14 w-full items-center justify-between border-b border-surface px-4">
-      <div className="flex items-center">
+      <div className="flex items-center gap-2">
         {backHref && (
           <Link
             href={backHref}
             aria-label="Voltar para a lista de aulas"
             className="flex min-h-[44px] min-w-[44px] items-center justify-center text-text-secondary"
           >
-            <ChevronLeftIcon />
+            <HomeIcon />
           </Link>
+        )}
+        {backHref && (
+          <span className="h-4 w-px bg-white/25" aria-hidden="true" />
         )}
         <span className="text-sm font-medium text-text-primary">
           {themeTitle}
@@ -56,7 +59,7 @@ export default function Header({
   )
 }
 
-function ChevronLeftIcon() {
+function HomeIcon() {
   return (
     <svg
       width="20"
@@ -65,8 +68,14 @@ function ChevronLeftIcon() {
       fill="none"
       aria-hidden="true"
     >
-      <polyline
-        points="13 4 7 10 13 16"
+      <path
+        d="M3 9.5L10 3l7 6.5V17a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M7.5 18v-5h5v5"
         stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"
