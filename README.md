@@ -31,20 +31,21 @@ app/
   globals.css      # Tailwind v4 @theme tokens + animação de flip
 
 components/
-  Header.tsx           # Barra fixa com título e botão hambúrguer (44×44px)
+  Header.tsx           # Barra fixa com título da aula atual e botão hambúrguer (44×44px)
   ProgressCounter.tsx  # Contador "x / y"
   FlashCard.tsx        # Card com flip 3D (dvh height, touch-first)
   ExplanationBlock.tsx # Bloco de explicação (truncado em 180 chars)
   SideMenu.tsx         # Overlay fullscreen com lista de aulas + swipe-down
 
 lib/
-  flashcards.ts    # Lê todos os .json em /data → Theme[]
+  flashcards.ts    # Lê todos os .json em /data, une arquivos com mesmo id → Theme[], valida IDs únicos
 
 types/
   index.ts         # Flashcard · Lesson · Theme
 
 data/
-  example.json     # Tema de exemplo (Fundamentos Web)
+  example.json.bak             # Tema de exemplo desativado (renomeie para .json para reativar)
+  logica-0{1-4}-*.json         # Lógica de Programação — 4 aulas, 1 arquivo por aula
 
 .github/
   workflows/
