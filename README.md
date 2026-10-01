@@ -70,6 +70,7 @@ tema com várias aulas.
     {
       "id": "id-unico-da-aula",
       "title": "Título da Aula",
+      "slidesUrl": "https://drive.google.com/drive/folders/SEU_ID_AQUI?usp=sharing",
       "flashcards": [
         {
           "id": "card-1",
@@ -82,6 +83,8 @@ tema com várias aulas.
   ]
 }
 ```
+
+> **`slidesUrl`** (opcional) — link da pasta ou arquivo de slides da aula (Google Drive ou qualquer URL). Quando presente, um botão com ícone de apresentação aparece no Header e abre o link em nova aba. Quando ausente, o botão não é renderizado.
 
 ### Ordem das aulas
 
